@@ -1,1 +1,1 @@
-web: gunicorn wedding_site.wedding_site.wsgi --preload
+web: python manage.py runserver 0.0.0.0:$PORT
