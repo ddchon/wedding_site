@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'localflavor',
     'crispy_forms',
     'formtools',
+    'herokuapp'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wedding_site.wedding_site.wsgi.application'
+WSGI_APPLICATION = 'wedding_site.wsgi.application'
 
 
 # Database
