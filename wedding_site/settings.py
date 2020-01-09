@@ -10,8 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-from dotenv import load_dotenv
-load_dotenv()
+import dj_database_url
 import os
 import django_heroku
 
@@ -86,14 +85,7 @@ WSGI_APPLICATION = 'wedding_site.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv("DATABASES_NAME"),
-        'USER': os.getenv("DATABASES_USER"),
-        'PASSWORD': os.getenv("DATABASES_PASSWORD"),
-        'HOST': os.getenv("DATABASES_HOST"),
-        'PORT': os.getenv("DATABASES_PORT"),
-    }
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
 
 
